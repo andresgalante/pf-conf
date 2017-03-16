@@ -1,0 +1,106 @@
+
+body{
+  @extend .mb-3;
+  color: $gray-lightest;
+  background: $gray-dark;
+  font-weight: $pf-font-weight-regular;
+  &::before{
+    content: "";
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      url("../img/grid-left.svg"),
+      linear-gradient(#2B2B2B, #010101);
+    background-repeat: no-repeat;
+    background-size: 35%, auto;
+  }
+}
+
+::selection { background: $brand-primary; }
+
+.conf-brand{
+  font-weight: $pf-font-weight-light;
+  color: $pf-color-white;
+  small{
+    font-weight: $pf-font-weight-light;
+    color: $gray-lightest;
+    font-size: $pf-font-size-relative-xs;
+  }
+  em{
+    font-family: $font-family-serif;
+    color: $gray-lighter;
+    font-weight: $pf-font-weight-light;
+    font-size: $pf-font-size-relative-sm;
+    font-style: normal;
+  }
+  strong{
+    font-weight: $pf-font-weight-bold;
+  }
+}
+
+.conf-header {
+  h2 {
+    font-size: $font-size-h4;
+    font-weight: $pf-font-weight-bold;
+  }
+  time {
+    // background: red;
+    margin-top: $pf-spacer-xxs;
+    font-weight: $pf-font-weight-light;
+  }
+}
+
+
+
+
+
+
+.conf-section{
+  margin-bottom: $pf-spacer-xxxxl;
+  padding-bottom: $pf-spacer-lg;
+  border-bottom: 1px solid $pf-color-black-600;
+}
+
+.conf-section__header{
+  @extend .mb-1;
+  @extend .text-uppercase;
+  font-weight: $pf-font-weight-light;
+}
+.conf-section__title{
+  font-size: $font-size-h2;
+}
+.conf-speaker__avatar{
+  position: relative;
+  img{
+    width: 50%;
+    display: block;
+//    clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 50%);
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    border: 1px solid $brand-primary;
+    // mix-blend-mode: color;
+    background:
+      linear-gradient(45deg, transparent 15%, $pf-color-blue-700 15%, $pf-color-blue-700 20%, transparent 20%, transparent 100%) 0 0,
+      linear-gradient(45deg, $brand-primary 21%, transparent 21%, transparent 100%) 0 0,
+      linear-gradient(-135deg, $brand-primary 15%, transparent 15%, transparent 100%) 0 0;
+  }
+}
+
+
+.conf-header{
+  position: sticky;
+  top: 3em;
+  margin-bottom: 4em;
+}
