@@ -68,9 +68,6 @@ body{
   font-weight: $pf-font-weight-light;
   font-size: $font-size-sm;
 
-  @include media-breakpoint-up(md) {
-    margin-right: ($grid-gutter-width-base / -2);
-  }
 }
 .conf-section__title{
   font-size: $font-size-h2;
