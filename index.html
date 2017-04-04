@@ -8,7 +8,7 @@
   </head>
   <body>
 
-<div class="container">
+<div class="container-fluid">
 
   <div class="row mt-3">
 
@@ -20,12 +20,14 @@
 
         <h1 class="conf-brand text-uppercase">
           <em class="d-block text-capitalize">the</em>
-          <strong>Pattern</strong>Fly
+          PatternFly
           <small class="d-block">Conference</small>
         </h1>
 
         <h2 class="mb-pf-xxxl">Raileigh, NC <time datetime="2017-05-08T13:00" class="d-block">June 8th</time></h2>
-        <p><button class="btn btn-primary btn-block btn-sm">CPF is open</button></p>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfRfcXmsBNd0wvRo1fOtW-XaOkYzTRkLD_tBWebnvYvQV0jeg/viewform">
+          <button class="btn btn-primary btn-block btn-lg">CPF is open</button>
+        </form>
 
       </header> <!-- header -->
     </div> <!-- col -->
@@ -34,29 +36,60 @@
 
 
 
-    <div class="col-md-6 offset-md-2">
+    <div class="col-md-7 offset-md-1 main" id="main">
 
-      <section class="conf-section conf-speaker">
-        <p class="conf-section__header">About the Patternfly conference</p>
-          <h1 class="conf-section__title mb-pf-xs">Design and Front-end</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisdent, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p>Como and join us, it's free and awesome!</p>
+      <section class="conf-section">
+        <p class="conf-section__header">About the conference</p>
+          <h1 class="conf-section__title mb-pf-lg">An afternoon of front-end design and development</h1>
+          <p>The PatternFly Conference is a half day community conference dedicated to sharing ideas, techniques and tools to power great user experience through front-end design and development.</p>
+
+          <dl class="row">
+            <dt class="col-sm-2">When</dt>
+            <dd class="col-sm-10">June 8 from 12-5PM, happy hour to follow.</dd>
+
+            <dt class="col-sm-2">Where</dt>
+            <dd class="col-sm-10">Red Hat Tower Annex (Raleigh).</dd>
+          </dl>
+
+
+      </section><!-- speaker -->
+
+
+      <section class="conf-section">
+        <p class="conf-section__header">Speakers</p>
+          <h1 class="conf-section__title mb-pf-lg">Wanna be a speaker?</h1>
+          <p>We’re inviting you to submit a talk or idea for The PatternFly Conference on June 8th, 2017 in Raleigh, North Carolina. Talks are 45-minute blocks.<p>
+          <p>Possible topics are:</p>
+          <ul>
+            <li>User Experience</li>
+            <li>Mobile</li>
+            <li>Front-End Development</li>
+            <li>Community</li>
+            <li>Research/Usability Testing </li>
+            <li>Visual Design</li>
+          </ul>
+          <p>Submission is open until April 19, 2017.</p>
+
+          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfRfcXmsBNd0wvRo1fOtW-XaOkYzTRkLD_tBWebnvYvQV0jeg/viewform">Send your idea!</a></p>
+
+
       </section><!-- speaker -->
 
 
 
+
+<!--
       <section class="conf-section conf-speaker" itemscope itemtype="http://schema.org/Person">
         <p class="conf-section__header">Speakers</p>
           <figure class="conf-speaker__avatar">
             <img src="img/beyonce-knowles-1.jpg" alt="Beyonce" itemtype="image">
           </figure>
-          <!-- img-circle -->
+
           <h2 class="conf-section__title mb-pf-xxxs" itemprop="name">Beyonce Knowles</h2>
           <p class="conf-speaker__url"><a href="https://github.com/cshinn" itemprop="url">github.com/bknowles</a></p>
           <p class="conf-speaker__description" itemprop="description">Beyonce is here just for to make Leslie like this website. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-      </section><!-- speaker -->
+      </section> speaker -->
 
 
 
