@@ -24,7 +24,7 @@ body{
 ::selection { background: $brand-primary; }
 
 .conf-brand{
-  font-size: 280%;
+  font-size: 310%;
   font-weight: $pf-font-weight-bold;
   color: $pf-color-white;
   small{
@@ -110,6 +110,8 @@ body{
 
 
 .main {
-  color: $pf-color-black-300;
+  color: rgba(255, 255, 255, .8);
   // margin-top: 7em;
+  background-image: linear-gradient(rgba(255,255,255,.1), transparent);
+  padding-top: $pf-spacer-xxxl;
 }
