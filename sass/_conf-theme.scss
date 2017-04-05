@@ -62,12 +62,15 @@ body{
 
 .conf-section{
   margin-bottom: $pf-spacer-xxxxl;
+  padding-bottom: $pf-spacer-xxl;
+
+  border-bottom: 1px solid $pf-color-black-200;
 }
 
 .conf-section__header{
-  background: rgba(0,0,0,.5);
-  padding: $pf-spacer-xxxs $pf-spacer-xxs;
-  @extend .mb-1;
+  // background: rgba(0,0,0,.5);
+  // padding: $pf-spacer-xxxs $pf-spacer-xxs;
+  // @extend .mb-0;
   @extend .text-uppercase;
   font-weight: $pf-font-weight-light;
   font-size: $font-size-sm;
@@ -76,6 +79,7 @@ body{
 .conf-section__title{
   font-size: $font-size-h2;
   font-weight: 500;
+  margin: 0 0 $pf-spacer-lg 0;
 }
 .conf-speaker__avatar{
   position: relative;
@@ -112,8 +116,18 @@ body{
 
 
 .main {
-  color: rgba(255, 255, 255, .8);
+  color: $pf-color-black-900;
+  // color: rgba(255, 255, 255, .8);
   // margin-top: 7em;
-  background-image: linear-gradient(rgba(255,255,255,.1), transparent);
+  // background-image: linear-gradient(rgba(255,255,255,.1), transparent);
+  // background-image: linear-gradient( -135deg, rgba($brand-primary, .7) 10%, transparent),
+  // linear-gradient( 45deg, $pf-color-purple-600 10%, transparent)
+  // ;
+  background: #fff;
   padding-top: $pf-spacer-xxxl;
+  // mix-blend-mode: screen;
+}
+
+.sponsor-logo {
+  width: 10rem;
 }
