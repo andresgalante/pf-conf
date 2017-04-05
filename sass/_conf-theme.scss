@@ -60,21 +60,41 @@ body{
   }
 }
 
-.conf-section{
-  margin-bottom: $pf-spacer-xxxxl;
-  padding-bottom: $pf-spacer-xxl;
-
+.conf-section {
+  // margin-bottom: $pf-spacer-xxxxl;
+  padding: $pf-spacer-xxxxl 0 $pf-spacer-xxl 0;
   border-bottom: 1px solid $pf-color-black-200;
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
+.conf-section--footer, .conf-section--alt  {
+    @include media-breakpoint-up(lg) {
+      // background-image: linear-gradient(rgba(0,0,0,.2) 0px, transparent 10px,  transparent);
+      // box-shadow: inset 0 4px 8px rgba(0,0,0,.2);
+      background-color: $pf-color-black-900;
+      color: $pf-color-black-200;
+      margin-left: -$grid-gutter-width-base*2;
+      margin-right: -$grid-gutter-width-base*2;
+      margin-bottom: 0;
+      border: none;
+      padding: $pf-spacer-xxxl $grid-gutter-width-base*2 $pf-spacer-xxl $grid-gutter-width-base*2;
+
+    }
+}
+
+.conf-section--alt  {
+  @include media-breakpoint-up(lg) {
+    background-color: $pf-color-black-800;
+  }
+}
+
+
 .conf-section__header{
-  // background: rgba(0,0,0,.5);
-  // padding: $pf-spacer-xxxs $pf-spacer-xxs;
-  // @extend .mb-0;
-  @extend .text-uppercase;
+  text-transform: uppercase;
   font-weight: $pf-font-weight-light;
   font-size: $font-size-sm;
-
 }
 .conf-section__title{
   font-size: $font-size-h2;
@@ -114,6 +134,13 @@ body{
   margin-bottom: 4em;
 }
 
+.event__title {
+  margin-bottom: $pf-spacer-md;
+  width: 50%;
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+  }
+}
 
 .main {
   color: $pf-color-black-900;
@@ -129,5 +156,10 @@ body{
 }
 
 .sponsor-logo {
-  width: 10rem;
+  max-width: 10rem;
+  max-height: 2rem;
+}
+
+.event__details {
+  text-transform: uppercase;
 }
