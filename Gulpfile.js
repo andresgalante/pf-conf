@@ -6,15 +6,15 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('styles', function() {
-      gulp.src('sass/**/*.scss')
+      gulp.src('www/sass/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./css/'))
+        .pipe(sourcemaps.write('./www/css/maps'))
+        .pipe(gulp.dest('./www/css/'))
         .pipe(reload({stream:true}));
 });
 
@@ -22,7 +22,7 @@ gulp.task('styles', function() {
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: "./"
+            baseDir: "./www"
         }
     });
 });
@@ -34,8 +34,8 @@ gulp.task('bs-reload', function () {
 
 // Watch task
 gulp.task('watch',function() {
-    gulp.watch('sass/**/*.scss',['styles']);
-    gulp.watch("*.html", ['bs-reload']);
+    gulp.watch('www/sass/**/*.scss',['styles']);
+    gulp.watch(["www/*.html", "www/*.css"], ['bs-reload']);
 });
 
 // deploys
