@@ -26,11 +26,13 @@ limitations under the License.
 @import "node_modules/bootstrap/scss/mixins";
 
 // Core: Import Icon Fonts
+$fa-font-path:  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/";
 @import "node_modules/font-awesome/scss/font-awesome.scss";
+$pf-font-path:  "https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.1/fonts/";
 @import "pf-icons";
 
 // Core: Import Overpass Font
-@import "pf-fonts";
+// @import "pf-fonts";  we are using google fonts
 
 // Core: Reset and dependencies
 @import "node_modules/bootstrap/scss/normalize";
