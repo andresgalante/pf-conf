@@ -1,4 +1,4 @@
-# The PatternFly HighFlyer Award
+# The PatternFly Conference
 
 ``npm install``
 
