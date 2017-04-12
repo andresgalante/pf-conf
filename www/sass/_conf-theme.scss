@@ -112,6 +112,42 @@ body {
   }
 }
 
+nav{
+  display: none;
+  @include media-breakpoint-up(lg) {
+  // background: red;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    display: block;
+    padding: $pf-spacer-sm $pf-spacer-xxxs;
+    margin: $pf-spacer-xxxs 0;
+    font-weight: $pf-font-weight-light;
+    font-size: $pf-font-size-relative-sm;
+    text-transform: uppercase;
+    color: $pf-color-black-300;
+    &:hover {
+      background: $pf-color-black-200;
+      color: $pf-color-black-400;
+      text-decoration: none;
+    }
+  }
+}
+}
+
 // .conf-speaker__avatar{
 //   position: relative;
 //   img{
