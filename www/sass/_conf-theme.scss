@@ -3,8 +3,8 @@ body {
   color: $gray-lightest;
   background-color: $gray-dark;
   background-image:
-    url("../img/grid-left.svg"),
-    linear-gradient(#2B2B2B, #010101);
+  url("../img/grid-left.svg"),
+  linear-gradient(#2B2B2B, #010101);
   background-repeat: no-repeat;
   background-size: 100%, auto;
   background-attachment: fixed;
@@ -55,7 +55,7 @@ body {
 .main {
   color: $pf-color-black-900;
   background: #fff;
-  padding-top: $pf-spacer-xxxl;
+  // padding-top: $pf-spacer-xxxl;
 }
 
 
@@ -112,6 +112,9 @@ body {
   }
 }
 
+
+// speakers
+
 .conf-speaker__avatar {
   transition: all .5s ease-in-out;
   filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.9);
@@ -126,6 +129,7 @@ body {
 }
 
 .conf-speaker-name {
+  margin-top: $pf-spacer-xxs;
   margin-bottom: $pf-spacer-xxs;
   font-weight: $pf-font-weight-semi-bold;
 }
@@ -134,48 +138,52 @@ body {
   font-size: $font-size-sm;
 }
 
-
-nav{
-  display: none;
-  @include media-breakpoint-up(lg) {
-  // background: red;
-  display: block;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  writing-mode: vertical-rl;
-  text-orientation: sideways-right;
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  a {
-    display: block;
-    padding: $pf-spacer-sm $pf-spacer-xxxs;
-    margin: $pf-spacer-xxxs 0;
-    padding-inline-start: $pf-spacer-sm;
-    padding-inline-end: $pf-spacer-sm;
-    padding-block-start: $pf-spacer-xxxs;
-    padding-block-end: $pf-spacer-xxxs;
-    margin-inline-start: $pf-spacer-xxxs;
-    margin-inline-end: $pf-spacer-xxxs;
-    // background: yellow;
-    font-weight: $pf-font-weight-light;
-    font-size: $pf-font-size-relative-sm;
-    text-transform: uppercase;
-    color: $pf-color-black-300;
-    &:hover {
-      background: rgba(0,0,0,.1);
-      color: $pf-color-black-400;
-      text-decoration: none;
-    }
+.conf-speakers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .conf-speaker {
+    flex: 0 0 46%;
+    margin-bottom: $pf-spacer-md;
   }
 }
+
+// nav
+nav{
+  display: none;
+  background: rgba(255,255,255,.9);
+  // background: red;
+  border-bottom: 1px solid $pf-color-black-150;
+  @include media-breakpoint-up(lg) {
+    display: block;
+    position: sticky;
+    margin: 0 (-$grid-gutter-width-base*2);
+    padding: 0 (($grid-gutter-width-base*2) - $pf-spacer-sm);
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+    }
+    a {
+      display: block;
+      padding: $pf-spacer-xxs $pf-spacer-sm;
+      font-weight: $pf-font-weight-light;
+      font-size: $pf-font-size-relative-sm;
+      text-transform: uppercase;
+      color: $pf-color-black-400;
+      &:hover {
+        background: rgba(0,0,0,.1);
+        color: $pf-color-black-500;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 

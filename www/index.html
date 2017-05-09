@@ -1,140 +1,186 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>The PatternFly Conference</title>
-    <link rel="stylesheet" href="css/patternfly.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <!-- <nav> -->
-    <!--   <ul class="list-unstyled"> -->
-    <!--     <li><a href="#about">About</a></li> -->
-    <!--     <li><a href="#keynote">Keynote</a></li> -->
-    <!--     <li><a href="#cfp">CFP</a></li> -->
-    <!--     <li><a href="#sponsor">Sponsor</a></li> -->
-    <!--   </ul> -->
-    <!-- </nav> -->
+<head>
+  <meta charset="utf-8">
+  <title>The PatternFly Conference</title>
+  <link rel="stylesheet" href="css/patternfly.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <div class="container-fluid">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-      <div class="row">
+  <script type="text/javascript">
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  })
+  </script>
 
-        <div class="col-lg-4">
 
-          <header class="event">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <h1 class="event__title">
-              <img src="img/the-patternfly-conference-logo.svg" alt="The PatternFly Conference">
-            </h1>
+</head>
+<body>
 
-            <div class="event__details">
-              <time datetime="2017-05-08T12:00">
-                <span class="event__date d-block">June 8, 2017</span>
-                <span class="event__time">1 - 6 PM</span>
-              </time>
+  <div class="container-fluid">
 
-              <div class="event__venue">
-                <strong>Red Hat Annex</strong>
-                <address class="event__address">
-                  190 E Davie St<br>
-                  Raleigh, NC 27601
-                </address>
-              </div>
+    <div class="row">
+
+      <div class="col-lg-4">
+
+        <header class="event">
+
+          <h1 class="event__title">
+            <img src="img/the-patternfly-conference-logo.svg" alt="The PatternFly Conference">
+          </h1>
+
+          <div class="event__details">
+            <time datetime="2017-05-08T12:00">
+              <span class="event__date d-block">June 8, 2017</span>
+              <span class="event__time">1 - 6 PM</span>
+            </time>
+
+            <div class="event__venue">
+              <strong>Red Hat Annex</strong>
+              <address class="event__address">
+                190 E Davie St<br>
+                Raleigh, NC 27601
+              </address>
             </div>
-            <p class="mb-pf-xxs">
-              <a
-                href="https://www.eventbrite.com/e/the-patternfly-conference-tickets-33459739983"
-                class="btn btn-primary btn-block btn-lg">
-                Register for Free
-              </a>
-            </p>
+          </div>
+          <p class="mb-pf-xxs">
+            <a
+            href="https://www.eventbrite.com/e/the-patternfly-conference-tickets-33459739983"
+            class="btn btn-primary btn-block btn-lg">
+            Register <span class="hidden-lg-down">for Free</span>
+          </a>
+        </p>
 
-          </header> <!-- header -->
-        </div> <!-- col -->
-
-
-        <div class="col-lg-8 main" id="main">
-
-          <section class="conf-section" id="about">
-            <h2 class="conf-section__header">About the conference</h2>
-            <p>The <a href="http://www.patternfly.org/">PatternFly</a> Conference is a half-day community conference dedicated to sharing ideas, techniques, and tools to power great user experiences through front-end design and development.</p>
-          </section><!-- speaker -->
+      </header> <!-- header -->
+    </div> <!-- col -->
 
 
-          <section class="conf-section" id="keynote">
-            <h2 class="conf-section__header">Keynote</h2>
-            <!-- <h2 class="conf-section__title"></h2> -->
+    <main class="col-lg-8 main" id="main">
 
-            <div class="conf-speaker">
-              <figure class="conf-speaker__avatar">
-                <img src="img/tiemann-2.jpg">
-              </figure>
+      <nav>
+        <ul class="list-unstyled">
+          <li><a href="#about">About</a></li>
+          <li><a href="#keynote">Keynote</a></li>
+          <li><a href="#cfp">CFP</a></li>
+          <li><a href="#sponsor">Sponsor</a></li>
+        </ul>
+      </nav>
 
-              <div class="conf-speaker-info">
-                <h2 class="conf-speaker-name">Michael Tiemann</h2>
-                <p class="conf-speaker-title">Vice President of Open Source Affairs at Red Hat, Inc.</p>
-                <div class="conf-speaker__description">
-                  <p>Michael Tiemann is a true
-                  open source software pioneer.  He made his contributions 30
-                  years ago by first writing patches and ports for the GNU C
-                  compiler and then writing the GNU C++ compiler and debugger.
-                  His early work led to the creation of leading open source
-                  technologies and the first open source business model.</p>
-                  <p>He continues to extend and apply the principles of open source to
-                  new disciplines, ranging from agriculture to music to
-                  sustainable energy production. </p>
-                  <p>As both a Vice President at
-                  Red Hat and Chair of the Board of Trustees of UNC School of
-                  the Arts, he has a unique perspective on innovation,
-                  presentation, and community.<p>
-                </div>
-
-              </div>
-            </div>
-          </section>
+      <section class="conf-section" id="about">
+        <h2 class="conf-section__header">About the conference</h2>
+        <p>The <a href="http://www.patternfly.org/">PatternFly</a> Conference is a half-day community conference dedicated to sharing ideas, techniques, and tools to power great user experiences through front-end design and development.</p>
+      </section><!-- speaker -->
 
 
-          <section class="conf-section" id="cfp">
-            <h2 class="conf-section__header">Call for speakers</h2>
-            <p><strong>Update:</strong> The 2017 <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfRfcXmsBNd0wvRo1fOtW-XaOkYzTRkLD_tBWebnvYvQV0jeg/viewform">Call
-                for Speakers</a> is now closed and the
-              selection process has begun. Thank you to everyone who submitted a
-              talk. If you missed out on the call but would still like to
-              participate in The PatternFly Conference 2017, we will continue to
-              accept talks until the selection process is over.</p>
-            <p>We’re looking for speakers to talk about various aspects of user experience, including front-end design and development. The conference targets technology professionals and students at universities and colleges in the Triangle area. Talks are 45-minute blocks including Q&A.<p>
-            <p>Possible topics include (but aren’t limited to):</p>
-            <ul>
-              <li>User Experience</li>
-              <li>Mobile</li>
-              <li>Front-End Development</li>
-              <li>Community</li>
-              <li>Research/Usability Testing </li>
-              <li>Visual Design</li>
-            </ul>
-          </section><!-- speaker -->
+      <section class="conf-section" id="keynote">
+        <h2 class="conf-section__header">Keynote</h2>
+        <!-- <h2 class="conf-section__title"></h2> -->
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/tiemann-2.jpg">
+          </figure>
+
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">Michael Tiemann</h3>
+            <p class="conf-speaker-title">Vice President of Open Source Affairs at Red Hat, Inc.</p>
+            <!-- <div class="conf-speaker__description">
+            <p>Michael Tiemann is a true
+            open source software pioneer.  He made his contributions 30
+            years ago by first writing patches and ports for the GNU C
+            compiler and then writing the GNU C++ compiler and debugger.
+            His early work led to the creation of leading open source
+            technologies and the first open source business model.</p>
+            <p>He continues to extend and apply the principles of open source to
+            new disciplines, ranging from agriculture to music to
+            sustainable energy production. </p>
+            <p>As both a Vice President at
+            Red Hat and Chair of the Board of Trustees of UNC School of
+            the Arts, he has a unique perspective on innovation,
+            presentation, and community.<p>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
 
 
-          <section class="conf-section conf-section--footer conf-section--alt" id="sponsor">
-            <h2 class="conf-section__header">Sponsor</h2>
-            <p>Thank you to <a href="http://redhat.com/uxd">The Red Hat UXD team</a> for sponsoring the PatternFly project and conference, and big thanks to the PatternFly community volunteers for helping organize the effort.</p>
-          </section><!-- speaker -->
-
-          <section class="conf-section conf-section--footer conf-section--alt-two">
-            <h2 class="conf-section__header">Social Media</h2>
-            <p>Follow us on Twitter <a href="https://twitter.com/patternfly_des">@patternfly_des</a> to stay up-to-date. Use <strong>#PFCon2017</strong> to reference the event.</p>
-          </section><!-- speaker -->
-
-          <section class="conf-section conf-section--footer">
-            <h2 class="conf-section__header">Code of conduct</h2>
-            We believe that everyone deserves a thoroughly pleasant conference experience. We adhere to the <a href="https://bocoup.com/guidelines/code-of-conduct">Bocoup Code of Conduct</a> and expect that all of our speakers, attendees, sponsors, and volunteers will do the same.
-          </section><!-- speaker -->
+    <section class="conf-section" id="speakers">
+      <h2 class="conf-section__header">Speakers</h2>
 
 
+      <!-- <h2 class="conf-section__title"></h2> -->
+      <div class="conf-speakers">
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/Kendall-Totten.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">Kendall Totten</h3>
+            <p class="conf-speaker-title">Red Hat, Inc.</p>
+          </div>
+        </div>
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/megan-squire.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">Megan Squire</h3>
+            <p class="conf-speaker-title">Elon University</p>
+          </div>
+        </div>
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/Elizabeth-Matusov.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">Elizabeth Matusov</h3>
+            <p class="conf-speaker-title">Red Hat, Inc.</p>
+          </div>
+        </div>
+
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/john-romano.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">John Romano</h3>
+            <p class="conf-speaker-title">Visual Designer at PointSource</p>
+          </div>
+        </div>
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/Dwight-McNight.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">Dwight McNight</h3>
+            <p class="conf-speaker-title">Visual Designer at PointSource</p>
+          </div>
+        </div>
+
+
+        <div class="conf-speaker">
+          <figure class="conf-speaker__avatar">
+            <img src="img/tiemann-2.jpg">
+          </figure>
+          <div class="conf-speaker-info">
+            <h3 class="conf-speaker-name">UXD Design TBD</h3>
+            <p class="conf-speaker-title">Red Hat, Inc.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
 
 
@@ -142,11 +188,95 @@
 
 
 
-      </div> <!-- col -->
 
-    </div><!--  row -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
 
-  </div><!-- Container -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  </body>
+
+
+
+
+
+
+
+
+
+    <!--
+    <section class="conf-section" id="cfp">
+    <h2 class="conf-section__header">Call for speakers</h2>
+    <p><strong>Update:</strong> The 2017 <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSfRfcXmsBNd0wvRo1fOtW-XaOkYzTRkLD_tBWebnvYvQV0jeg/viewform">Call
+    for Speakers</a> is now closed and the
+    selection process has begun. Thank you to everyone who submitted a
+    talk. If you missed out on the call but would still like to
+    participate in The PatternFly Conference 2017, we will continue to
+    accept talks until the selection process is over.</p>
+    <p>We’re looking for speakers to talk about various aspects of user experience, including front-end design and development. The conference targets technology professionals and students at universities and colleges in the Triangle area. Talks are 45-minute blocks including Q&A.<p>
+    <p>Possible topics include (but aren’t limited to):</p>
+    <ul>
+    <li>User Experience</li>
+    <li>Mobile</li>
+    <li>Front-End Development</li>
+    <li>Community</li>
+    <li>Research/Usability Testing </li>
+    <li>Visual Design</li>
+  </ul>
+</section> speaker -->
+
+
+<section class="conf-section conf-section--footer conf-section--alt" id="sponsor">
+  <h2 class="conf-section__header">Sponsor</h2>
+  <p>Thank you to <a href="http://redhat.com/uxd">The Red Hat UXD team</a> for sponsoring the PatternFly project and conference, and big thanks to the PatternFly community volunteers for helping organize the effort.</p>
+</section><!-- speaker -->
+
+<section class="conf-section conf-section--footer conf-section--alt-two">
+  <h2 class="conf-section__header">Social Media</h2>
+  <p>Follow us on Twitter <a href="https://twitter.com/patternfly_des">@patternfly_des</a> to stay up-to-date. Use <strong>#PFCon2017</strong> to reference the event.</p>
+</section><!-- speaker -->
+
+<section class="conf-section conf-section--footer">
+  <h2 class="conf-section__header">Code of conduct</h2>
+  We believe that everyone deserves a thoroughly pleasant conference experience. We adhere to the <a href="https://bocoup.com/guidelines/code-of-conduct">Bocoup Code of Conduct</a> and expect that all of our speakers, attendees, sponsors, and volunteers will do the same.
+</section><!-- speaker -->
+
+
+
+
+
+
+
+
+
+</main> <!-- col -->
+
+</div><!--  row -->
+
+</div><!-- Container -->
+
+
+
+</body>
 </html>
