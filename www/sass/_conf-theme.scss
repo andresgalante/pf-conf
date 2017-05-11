@@ -116,8 +116,8 @@ body {
 // speakers
 
 .conf-speaker__avatar {
-  transition: all .5s ease-in-out;
-  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.9);
+  transition: all .3s ease-in-out;
+  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.95);
   border: 1px solid $pf-color-black-400;
   &:hover {
     filter: none;
@@ -136,6 +136,13 @@ body {
 
 .conf-speaker-title {
   font-size: $font-size-sm;
+}
+.conf-speaker {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  &:hover {
+    color: $pf-color-blue-400;
+  }
 }
 
 .conf-speakers {
@@ -187,6 +194,50 @@ nav{
 }
 
 
+.modal-title {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.modal-body {
+  position: relative;
+  h3 {
+    margin-top: $pf-spacer-xxxl;
+    font-weight: $pf-font-weight-semi-bold;
+  }
+  .close {
+    position: absolute;
+    top: $modal-inner-padding;
+    right: $modal-inner-padding;
+    z-index: $zindex-popover;
+  }
+}
+
+
+.conf-modal-header{
+  position: relative;
+  margin: -($modal-inner-padding);
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.6);
+    color: $pf-color-white;
+    margin: 0;
+    padding: $modal-inner-padding;
+    small {
+      display: block;
+      margin-top: $pf-spacer-xxs
+    }
+  }
+}
+
 // .conf-speaker__avatar{
 //   position: relative;
 //   img{
@@ -216,3 +267,29 @@ nav{
 //   max-width: 10rem;
 //   max-height: 2rem;
 // }
+table {
+  small {
+    display: block;
+  }
+}
+td[data-toggle="modal"]{
+  transition: all .3s ease-in-out;
+  &:hover{
+    background: $pf-color-black-150;
+    cursor: pointer;
+    color: $pf-color-blue-400;
+  }
+}
+.conf-col-time {
+  width: 10%;
+}
+.conf-col-talk {
+  width: 45%;
+}
+
+.break {
+  td{
+    padding-top: $pf-spacer-xxxs;
+    padding-bottom: $pf-spacer-xxxs;
+  }
+}
