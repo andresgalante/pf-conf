@@ -55,7 +55,6 @@ body {
 .main {
   color: $pf-color-black-900;
   background: #fff;
-  // padding-top: $pf-spacer-xxxl;
 }
 
 
@@ -114,10 +113,59 @@ body {
 
 
 // speakers
+@mixin pseudo-elem {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+@mixin filter-base {
+  position: relative;
+
+  img {
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    @include pseudo-elem;
+    z-index: 2;
+  }
+
+  &:after {
+    @include pseudo-elem;
+    z-index: 3;
+  }
+}
+
+@mixin walden($filters...) {
+  @include filter-base;
+  filter: brightness(1.1) hue-rotate(-10deg) sepia(.3) saturate(1.6) $filters;
+
+  &::after {
+    background: rgb(0, 68, 204);
+    mix-blend-mode: screen;
+    opacity: .3;
+  }
+
+  @content;
+}
+
+// walden Instagram filter
+%walden,
+.walden {
+  @include walden;
+}
 
 .conf-speaker__avatar {
   transition: all .3s ease-in-out;
-  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.95);
+  // filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.95);
+  @include walden;
   border: 1px solid $pf-color-black-400;
   &:hover {
     filter: none;
