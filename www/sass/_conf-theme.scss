@@ -3,8 +3,8 @@ body {
   color: $gray-lightest;
   background-color: $gray-dark;
   background-image:
-    url("../img/grid-left.svg"),
-    linear-gradient(#2B2B2B, #010101);
+  url("../img/grid-left.svg"),
+  linear-gradient(#2B2B2B, #010101);
   background-repeat: no-repeat;
   background-size: 100%, auto;
   background-attachment: fixed;
@@ -55,7 +55,6 @@ body {
 .main {
   color: $pf-color-black-900;
   background: #fff;
-  padding-top: $pf-spacer-xxxl;
 }
 
 
@@ -112,9 +111,61 @@ body {
   }
 }
 
+
+// speakers
+@mixin pseudo-elem {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+@mixin filter-base {
+  position: relative;
+
+  img {
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    @include pseudo-elem;
+    z-index: 2;
+  }
+
+  &:after {
+    @include pseudo-elem;
+    z-index: 3;
+  }
+}
+
+@mixin walden($filters...) {
+  @include filter-base;
+  filter: brightness(1.1) hue-rotate(-10deg) sepia(.3) saturate(1.6) $filters;
+
+  &::after {
+    background: rgb(0, 68, 204);
+    mix-blend-mode: screen;
+    opacity: .3;
+  }
+
+  @content;
+}
+
+// walden Instagram filter
+%walden,
+.walden {
+  @include walden;
+}
+
 .conf-speaker__avatar {
-  transition: all .5s ease-in-out;
-  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.9);
+  transition: all .3s ease-in-out;
+  // filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(.95);
+  @include walden;
   border: 1px solid $pf-color-black-400;
   &:hover {
     filter: none;
@@ -126,6 +177,7 @@ body {
 }
 
 .conf-speaker-name {
+  margin-top: $pf-spacer-xxs;
   margin-bottom: $pf-spacer-xxs;
   font-weight: $pf-font-weight-semi-bold;
 }
@@ -133,51 +185,109 @@ body {
 .conf-speaker-title {
   font-size: $font-size-sm;
 }
+.conf-speaker {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  &:hover {
+    color: $pf-color-blue-400;
+  }
+}
 
+.conf-speakers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .conf-speaker {
+    flex: 0 0 46%;
+    margin-bottom: $pf-spacer-md;
+  }
+}
 
+// nav
 nav{
   display: none;
-  @include media-breakpoint-up(lg) {
+  background: rgba(255,255,255,.9);
   // background: red;
-  display: block;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  writing-mode: vertical-rl;
-  text-orientation: sideways-right;
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  a {
+  border-bottom: 1px solid $pf-color-black-150;
+  @include media-breakpoint-up(lg) {
     display: block;
-    padding: $pf-spacer-sm $pf-spacer-xxxs;
-    margin: $pf-spacer-xxxs 0;
-    padding-inline-start: $pf-spacer-sm;
-    padding-inline-end: $pf-spacer-sm;
-    padding-block-start: $pf-spacer-xxxs;
-    padding-block-end: $pf-spacer-xxxs;
-    margin-inline-start: $pf-spacer-xxxs;
-    margin-inline-end: $pf-spacer-xxxs;
-    // background: yellow;
-    font-weight: $pf-font-weight-light;
-    font-size: $pf-font-size-relative-sm;
-    text-transform: uppercase;
-    color: $pf-color-black-300;
-    &:hover {
-      background: rgba(0,0,0,.1);
+    position: sticky;
+    margin: 0 (-$grid-gutter-width-base*2);
+    padding: 0 (($grid-gutter-width-base*2) - $pf-spacer-sm);
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+    }
+    a {
+      display: block;
+      padding: $pf-spacer-xxs $pf-spacer-sm;
+      font-weight: $pf-font-weight-light;
+      font-size: $pf-font-size-relative-sm;
+      text-transform: uppercase;
       color: $pf-color-black-400;
-      text-decoration: none;
+      &:hover {
+        background: rgba(0,0,0,.1);
+        color: $pf-color-black-500;
+        text-decoration: none;
+      }
     }
   }
 }
+
+.modal-dialog {
+  max-width: 650px;
 }
 
+.modal-title {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.modal-body {
+  position: relative;
+  h3 {
+    margin-top: $pf-spacer-xxxl;
+    font-weight: $pf-font-weight-semi-bold;
+  }
+  .close {
+    position: absolute;
+    top: $modal-inner-padding;
+    right: $modal-inner-padding;
+    z-index: $zindex-popover;
+  }
+}
+
+
+.conf-modal-header{
+  position: relative;
+  margin: -($modal-inner-padding);
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.6);
+    color: $pf-color-white;
+    margin: 0;
+    padding: $modal-inner-padding;
+    small {
+      display: block;
+      margin-top: $pf-spacer-xxs
+    }
+  }
+}
 
 // .conf-speaker__avatar{
 //   position: relative;
@@ -208,3 +318,40 @@ nav{
 //   max-width: 10rem;
 //   max-height: 2rem;
 // }
+table {
+  small {
+    display: block;
+  }
+}
+td[data-toggle="modal"]{
+  transition: all .3s ease-in-out;
+  &:hover{
+    background: $pf-color-black-150;
+    cursor: pointer;
+    color: $pf-color-blue-400;
+  }
+}
+.conf-col-time {
+  width: 10%;
+}
+.conf-col-talk {
+  width: 45%;
+}
+
+.break {
+  td{
+    padding-top: $pf-spacer-xxxs;
+    padding-bottom: $pf-spacer-xxxs;
+  }
+}
+
+.conf-trackname {
+  td{
+    text-transform: uppercase;
+    font-size: $pf-font-size-relative-xs;
+    padding-top: $pf-spacer-xxxs;
+    padding-bottom: $pf-spacer-xxxs;
+    font-weight: $pf-font-weight-light;
+    // background: $pf-color-black-300;
+  }
+}
