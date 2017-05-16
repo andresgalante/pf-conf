@@ -344,3 +344,14 @@ td[data-toggle="modal"]{
     padding-bottom: $pf-spacer-xxxs;
   }
 }
+
+.conf-trackname {
+  td{
+    text-transform: uppercase;
+    font-size: $pf-font-size-relative-xs;
+    padding-top: $pf-spacer-xxxs;
+    padding-bottom: $pf-spacer-xxxs;
+    font-weight: $pf-font-weight-light;
+    // background: $pf-color-black-300;
+  }
+}
